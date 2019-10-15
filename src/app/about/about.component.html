@@ -13,4 +13,40 @@
       <p><ion-icon name="code"></ion-icon> <span translate>Version</span> {{ version }}</p>
     </ion-card-content>
   </ion-card>
+
+  <ion-grid>
+    <ion-row>
+      <ion-button color="medium" (click)="changeTheme('autumn')">Autumn</ion-button>
+      <ion-button color="medium" (click)="changeTheme('night')">Dark</ion-button>
+      <ion-button color="medium" (click)="changeTheme('neon')">Neon</ion-button>
+      <ion-button color="medium" (click)="changeTheme('')">Default</ion-button>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button color="primary">Primary</ion-button>
+        <br />
+        <ion-checkbox color="primary" checked></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-button color="secondary">Secondary</ion-button>
+        <br />
+        <ion-checkbox color="secondary"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-button color="tertiary">Tertiary</ion-button>
+        <br />
+        <ion-checkbox color="tertiary"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-button color="medium">Medium</ion-button>
+        <br />
+        <ion-checkbox color="medium" checked></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-button color="dark">Dark</ion-button>
+        <br />
+        <ion-checkbox color="dark" checked></ion-checkbox>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

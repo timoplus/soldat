@@ -1,7 +1,43 @@
 # soldat
 
+## Creating the theme changer
+
+Create the service:
+
+```
+ng g service core/services/theme
+```
+
+Next install color
+
+```
+npm i color
+npm install @types/color
+```
+
 This project was generated with [ngX-Rocket](https://github.com/ngx-rocket/generator-ngx-rocket/)
 version 7.1.0
+
+```
+ngx new
+          __   __
+ _ _  __ _\ \./ / ____ ____ ____ _  _ ____ ___
+| ' \/ _` |>   <  |--< [__] |___ |-:_ |===  |
+|_||_\__, /_/°\_\ ENTERPRISE APP STARTER -~*=>
+     |___/ v7.1.0
+
+? What is the name of your app? soldat
+? What kind of app do you want to create? (Press <space> to select, <a> to toggle all, <i> to invert selection)Web app
+? Do you want a progressive web app? (with manifest and service worker) Yes
+? Which UI framework do you want? Ionic (more mobile-oriented)
+? Which kind of layout do you want? Side menu with split panels (more app-oriented)
+? Do you want authentication? Yes
+? Do you want lazy loading? Yes
+? Do you want analytics support (with Angulartics2)? Yes
+? What analytics provider are you using? Other
+? Do you want additional tools? Prettier (automatic code formatting), Hads (markdown-based doc system), Compodoc (Angular doc generator), Jest (Delightful JavaScript Testing)
+? Do you want additional libraries? Lodash (collection & general utilities), Moment.js (date management)
+```
 
 # Getting started
 
