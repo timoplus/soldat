@@ -7,8 +7,9 @@ import * as Color from 'color';
   providedIn: 'root'
 })
 export class ThemeService {
-  constructor(@Inject(DOCUMENT) private document: Document) //private storage: Storage
-  {
+  constructor(
+    @Inject(DOCUMENT) private document: Document // private storage: Storage
+  ) {
     // storage.get('theme').then((cssText: any) => {
     //   this.setGlobalCSS(cssText);
     // });
@@ -18,7 +19,7 @@ export class ThemeService {
   setTheme(theme: any) {
     const cssText = CSSTextGenerator(theme);
     this.setGlobalCSS(cssText);
-    //this.storage.set('theme', cssText);
+    // this.storage.set('theme', cssText);
   }
 
   // Define a single CSS variable
@@ -120,7 +121,7 @@ function CSSTextGenerator(colors: any) {
     --ion-color-light-tint: ${Color(light).lighten(tintRatio)};`;
 }
 
-function contrast(color: any, ratio = 0.8) {
+function contrast(color: any, ratio: number = 0.8) {
   color = Color(color);
   return color.isDark() ? color.lighten(ratio) : color.darken(ratio);
 }

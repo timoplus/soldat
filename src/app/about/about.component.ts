@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding, ElementRef } from '@angular/core';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { environment } from '@env/environment';
 import { ThemeService } from '@app/core';
 
@@ -35,14 +36,48 @@ const themes = {
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
+  quantum = 4; // spacing-unit
+  borderWidth = 0;
+  borderRadius = 0;
+  columns = 3; // margins
+  gutter = 2; // grid-columns
   version: string | null = environment.version;
   private theme: ThemeService;
 
-  constructor(private _theme: ThemeService) {
+  constructor(private _theme: ThemeService, private elementRef: ElementRef) {
     this.theme = _theme;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.elementRef.nativeElement.style.setProperty('--spacing-unit', this.quantum + 'px');
+    this.elementRef.nativeElement.style.setProperty('--grid-columns', this.columns);
+    this.elementRef.nativeElement.style.setProperty('--margins', this.gutter);
+  }
+
+  borderWidthChange() {
+    this.elementRef.nativeElement.style.setProperty('--border-width', this.borderWidth + 'px');
+    console.log('borderWidth', this.borderWidth);
+  }
+
+  borderRadiusChange() {
+    this.elementRef.nativeElement.style.setProperty('--border-radius', this.borderRadius + 'px');
+    console.log('borderRadius', this.borderRadius);
+  }
+
+  quantumChange() {
+    this.elementRef.nativeElement.style.setProperty('--spacing-unit', this.quantum + 'px');
+    console.log('quantum', this.quantum);
+  }
+
+  columnsChange() {
+    this.elementRef.nativeElement.style.setProperty('--grid-columns', this.columns);
+    console.log('columns', this.columns);
+  }
+
+  gutterChange() {
+    this.elementRef.nativeElement.style.setProperty('--margins', this.gutter);
+    console.log('gutter', this.gutter);
+  }
 
   changeTheme(name: string) {
     this.theme.setTheme(themes[name]);
