@@ -40,6 +40,12 @@
   --cell-margin: (var(--grid-gutter) / 2);
 }
 
+.hcs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 ion-card {
   border-radius: calc(var(--border-radius) * 2);
   border: var(--border-width) solid var(--ion-color-tertiary);
@@ -85,12 +91,11 @@ ion-card {
 }
 
 .grid {
-  margin: 0;
   border: 0;
   display: flex;
   flex-flow: row wrap;
   align-items: stretch;
-  padding: calc(var(--grid-margin) - var(--cell-margin));
+  margin: calc(var(--grid-margin) - var(--cell-margin));
   background-color: var(--grid-color);
 }
 
@@ -100,7 +105,7 @@ ion-card {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  margin: calc(var(--cell-margin));
+  margin: var(--grid-gutter);
   background-color: var(--cell-color);
   width: calc(100% / var(--grid-columns) - var(--grid-gutter));
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
@@ -110,6 +115,7 @@ ion-card {
 
 .cell-title {
   font-size: calc(3 * var(--spacing-unit));
+  padding: calc(3 * var(--spacing-unit));
 }
 
 .cell-header {
@@ -127,6 +133,7 @@ ion-card {
 .cell-content {
   font-size: calc(2.5 * var(--spacing-unit));
   padding: calc(var(--cell-padding));
+  padding: calc(3 * var(--spacing-unit));
   flex-grow: 1;
 }
 

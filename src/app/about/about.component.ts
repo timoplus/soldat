@@ -75,7 +75,7 @@ export class AboutComponent implements OnInit {
   }
 
   gutterChange() {
-    this.elementRef.nativeElement.style.setProperty('--margins', this.gutter);
+    this.elementRef.nativeElement.style.setProperty('--grid-gutter', this.gutter + 'px');
     console.log('gutter', this.gutter);
   }
 

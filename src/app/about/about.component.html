@@ -16,10 +16,12 @@
 
   <ion-grid>
     <ion-row>
-      <ion-button color="medium" (click)="changeTheme('autumn')">Autumn</ion-button>
-      <ion-button color="medium" (click)="changeTheme('night')">Dark</ion-button>
-      <ion-button color="medium" (click)="changeTheme('neon')">Neon</ion-button>
-      <ion-button color="medium" (click)="changeTheme('')">Default</ion-button>
+      <ion-col text-center>
+        <ion-button color="medium" (click)="changeTheme('autumn')">Autumn</ion-button>
+        <ion-button color="medium" (click)="changeTheme('night')">Dark</ion-button>
+        <ion-button color="medium" (click)="changeTheme('neon')">Neon</ion-button>
+        <ion-button color="medium" (click)="changeTheme('')">Default</ion-button>
+      </ion-col>
     </ion-row>
     <ion-row>
       <ion-col class="ion-text-center">
@@ -76,22 +78,22 @@
           </ion-range>
         </ion-item>
       </ion-col>
-      <!-- <ion-col>
+      <ion-col>
         <ion-item>
-          <ion-range [(ngModel)]="columns" (ionChange)="columnsChange()" min="1" max="4" step="1">
-            <ion-icon range-left small name="columns"></ion-icon>
-            <ion-icon range-right name="columns"></ion-icon>
+          <ion-range [(ngModel)]="columns" (ionChange)="columnsChange()" min="1" max="6" step="1">
+            <ion-icon size="small" slot="start" name="md-menu"></ion-icon>
+            <ion-icon slot="end" name="md-grid"></ion-icon>
           </ion-range>
         </ion-item>
       </ion-col>
       <ion-col>
         <ion-item>
-          <ion-range [(ngModel)]="gutter" (ionChange)="gutterChange()" min="1" max="5" step="1">
-            <ion-icon range-left small name="gutter"></ion-icon>
-            <ion-icon range-right name="gutter"></ion-icon>
+          <ion-range [(ngModel)]="gutter" (ionChange)="gutterChange()" min="1" max="15" step="2">
+            <ion-icon size="small" slot="start" name="ios-easel"></ion-icon>
+            <ion-icon slot="end" name="md-easel"></ion-icon>
           </ion-range>
         </ion-item>
-      </ion-col> -->
+      </ion-col>
     </ion-row>
   </ion-grid>
   <div class="grid">
