@@ -7,19 +7,22 @@ import * as Color from 'color';
   providedIn: 'root'
 })
 export class ThemeService {
+  theme: any;
   constructor(
     @Inject(DOCUMENT) private document: Document // private storage: Storage
   ) {
     // storage.get('theme').then((cssText: any) => {
     //   this.setGlobalCSS(cssText);
     // });
+    this.setTheme(defaults);
   }
 
   // Override all global variables with a new theme
-  setTheme(theme: any) {
-    const cssText = CSSTextGenerator(theme);
+  setTheme(_theme: any) {
+    const cssText = CSSTextGenerator(_theme);
     this.setGlobalCSS(cssText);
     // this.storage.set('theme', cssText);
+    this.theme = _theme;
   }
 
   // Define a single CSS variable
@@ -29,6 +32,10 @@ export class ThemeService {
 
   private setGlobalCSS(css: string) {
     this.document.documentElement.style.cssText = css;
+  }
+
+  getTheme() {
+    return this.theme;
   }
 
   //   get storedTheme() {

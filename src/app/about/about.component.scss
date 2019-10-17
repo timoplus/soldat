@@ -40,12 +40,13 @@
   --cell-margin: (var(--grid-gutter) / 2);
 }
 
-.hcs {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.grid {
+  justify-content: center;
 }
 
+ion-item {
+  border: none;
+}
 ion-card {
   border-radius: calc(var(--border-radius) * 2);
   border: var(--border-width) solid var(--ion-color-tertiary);
@@ -53,6 +54,12 @@ ion-card {
 
 .primary-bg {
   background-color: var(--primary-color);
+}
+.primary-tint-bg {
+  background-color: var(--ion-color-primary-tint);
+}
+.primary-shade-bg {
+  background-color: var(--ion-color-primary-shade);
 }
 
 .top-header {

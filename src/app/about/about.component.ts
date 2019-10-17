@@ -52,6 +52,7 @@ export class AboutComponent implements OnInit {
     this.elementRef.nativeElement.style.setProperty('--spacing-unit', this.quantum + 'px');
     this.elementRef.nativeElement.style.setProperty('--grid-columns', this.columns);
     this.elementRef.nativeElement.style.setProperty('--margins', this.gutter);
+    console.log('theme.primary', this.theme.getTheme());
   }
 
   borderWidthChange() {
